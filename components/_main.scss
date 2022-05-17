@@ -7,10 +7,8 @@
 .seccion1 {
     display: flex;
     background-color: $colordeFondo;
-    border: solid $colorDestacado;
     .textoPrincipal {
         width: 50%;
-        border-left: $colorDestacado solid 8px;
         height: 100%;
         p {
             text-align: center;
@@ -36,9 +34,6 @@
     h2 {
         text-align: center;
         background-color: $colordeFondo;
-        border-left: solid $colorDestacado;
-        border-right: solid $colorDestacado;
-        border-bottom: solid $colorDestacado;
         height: 8rem;
         padding-top: 3rem;
         color: $colorDestacado;
@@ -47,22 +42,15 @@
 
 /* SECCION 3 */
 .seccion3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: $colordeFondo;
-    height: 60rem;
+    @include propiedadesContenedor (flex, column, flex-end, '', '', 60rem, $colordeFondo);
+    
     background-image: url(../images/imagenTextoPpal.jpg);
     background-repeat: no-repeat;
     background-position: center;
     &__formulario {
-        display: flex;
-        flex-direction: column;
+        @include propiedadesContenedor (flex, column, '', '', 100%, 18rem, '');
+        border: solid white 0.5px;
         color: $colorDestacado;
-        border: solid white;
-        border-bottom: solid white 1px;
-        width: 100%;
-        height: 18rem;
         padding: 10px;
         text-align: left;
         line-height: 3rem;

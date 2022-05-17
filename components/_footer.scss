@@ -1,15 +1,10 @@
 /* FOOTER */
 .inferior {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: $colordeFondo;
-    border: solid 2px;
+    @include propiedadesContenedor (flex, column, space-between, '', '', '', $colordeFondo);
+    @extend .enlaceLista;
     font-family: 'Averia Serif Libre', cursive;
-    a {
-        text-decoration: none;
-    }
+    border: solid 1.5px;
+    position: relative;
     span {
         position: absolute;
         font-weight: 700;
@@ -19,31 +14,22 @@
         margin: 0.4rem;
     }
     .redes ul  {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        list-style: none;
+        @include propiedadesContenedor (flex, row, center, '', '', '', '');
         li {
             padding: 1rem 3rem;
-            img:hover {
+            svg:hover {
                 transform: scale(1.1);
             }
         }
      }
      .terminosYcondiciones ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        list-style: none;
+        @extend .navegacionTemplate;
+        @include propiedadesContenedor (flex, row, right, '', '', '', '');
         li {
             padding: 0.4rem;
             a{
                 color: black;
                 font-weight: 700;
-                transition: all 0.8s;
-                &:hover {
-                    color: rgb(255, 255, 255);
-                }
             }
         }
      }
